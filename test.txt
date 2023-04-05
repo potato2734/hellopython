@@ -1,0 +1,38 @@
+jsum , esum = 0 , 0
+def hak():
+b = int(input('학점을 입력하세요:'))
+return b
+def pyoung():
+c = input('평점을 입력하세요:')
+if c=='A+':
+return 4.5
+elif c=='A':
+return 4
+elif c=='B+':
+return 3.5
+elif c=='B':
+return 3
+elif c=='C+':
+return 2.5
+elif c=='C':
+return 2
+elif c=='D+':
+return 1.5
+elif c=='D':
+return 1
+elif c=='F':
+return 0
+i=0
+while(1):
+print('작업을 선택하세요.')
+print('1. 입력')
+print('2. 계산')
+a = int(input())
+if a == 1:
+jsum+=hak()
+esum+=pyoung()
+print('입력되었습니다.')
+i+=1
+else:
+print('제출용:', jsum,'학점','(GPA:',jsum/i,')')
+print('열람용:',esum,'학점','(GPA:',esum/i,')'
