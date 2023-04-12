@@ -1,0 +1,71 @@
+# 변수
+jethakdic={} # 사전 완료
+openhak=[] # 입력은 리스트로, 최종 관리는 튜플로 -> tuple(openhak)
+subjectlist=[] # 수강 목록 관리 시 리스트 사용
+cnt,i=1,1 # 몇번 질문 했는지 추적
+selnum_=True
+seconddemand=[]
+totalsum,hs,ps=0,0,0
+exception,excepf=0,0
+def hakintonum(n):
+    match n:
+        case 'A+':
+            return 4.5
+        case 'A':
+            return 4
+        case 'B+':
+            return 3.5
+        case 'B':
+            return 3
+        case 'C+':
+            return 2.5
+        case 'C':
+            return 2
+        case 'D+':
+            return 1.5
+        case 'D':
+            return 1
+        case 'F':
+            return 0
+while selnum_==True:
+    print('작업을 선택하세요.\n1. 입력 \n2. 출력\n3. 계산')
+    selnum = int(input())
+    hsl=0
+    if selnum==1: # 데이터 추가
+        print('과목명을 입력하세요:')
+        name=input()
+        jethakdic[cnt]=jethakdic
+        jethakdic[cnt]=name
+        print('학점을 입력하세요:')
+        hak=input()
+        list1=list()
+        list1.append(cnt)
+        list1.append(hak)
+
+        print('평점을 입력하세요:')
+        pyong=input()
+        list1.append(pyong)
+        openhak.append(tuple(list1))
+        if pyong=='F':
+            exception+=1
+            excepf+=int(hak)
+
+
+        print('입력되었습니다.')
+        cnt+=1
+        seconddemand.append(name)
+        seconddemand.append(hak)
+        seconddemand.append(pyong)
+        hs+=int(hak)
+        hsl+=int(hak)
+        totalsum+=hakintonum(pyong)*hsl
+    elif selnum==2: # 저장된 데이터 확인
+        while i <= 3 * (cnt - 1):
+            print(f'[{seconddemand[i - 1]}] {seconddemand[i]}학점: {seconddemand[i + 1]}')
+            i += 3
+    else: # 계산
+
+        print(f'제출용: {totalsum} 학점 (GPA: {totalsum/(hs-excepf)})')  # 제출용 학점
+        print(f'제출용: {totalsum} 학점 (GPA: {totalsum/hs})')  # 열람용 학점
+        print('프로그램을 종료합니다.')
+        selnum_=False # 탈출
