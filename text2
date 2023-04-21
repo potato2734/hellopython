@@ -1,0 +1,2 @@
+print("hello world")
+p=int(input("what is p?"))
