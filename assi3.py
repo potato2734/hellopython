@@ -7,7 +7,6 @@ class CourseHistory:
         self.taken_course_list = []
         self.empty_tuple = ()
 
-
     # 평점 변환기
     @classmethod
     def gpa_intpret(cls,course_gpa):
